@@ -1,0 +1,33 @@
+name: Import to Amplience Hub5 on Merge to Main
+
+on:
+  push:
+    branches:
+      - main 
+
+jobs:
+  import-to-hub:
+    name: Import Folders to Amplience Hub
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install Amplience CLI
+        run: npm install -g @amplience/dc-cli
+
+      - name: Configure Amplience CLI
+        run: dc-cli configure --clientId ${{ secrets.AMPLIENCE_HUB5_CLIENT_ID }} --clientSecret ${{ secrets.HUB5_CLIENT_SECRET }} --hubId ${{ secrets.HUB5_HUB_ID }}
+
+      - name: schema content types
+        run: dc-cli content-type import ./schema-content-types
+
+      - name: extensions
+        run: dc-cli extension import ./extensions
+
