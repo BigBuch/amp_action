@@ -1,0 +1,90 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://schema-examples.com/next-gen-content-palettes",
+    "title": "Content palette example",
+    "description": "A simple example of a content palette. Requires Next Generation Authoring to be switched on",
+    "$comment": "Docs: https://amplience.com/developers/docs/next-gen-content-authoring/schema-examples/#content-palette--example-one",
+    "allOf": [
+        {
+            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+        }
+    ],
+    "type": "object",
+    "properties": {
+        "flexibleList": {
+            "type": "array",
+            "title": "Flexible list",
+            "items": {
+                "oneOf": [
+                    {
+                        "type": "object",
+                        "title": "Rich Text",
+                        "properties": {
+                            "type": {
+                                "const": "paragraph",
+                                "ui:component": "none"
+                            },
+                            "body": {
+                                "type": "string",
+                                "format": "markdown",
+                                "title": "For headings or paragraphs"
+                            }
+                        }
+                    },
+                    {
+                        "type": "object",
+                        "title": "Image",
+                        "properties": {
+                            "type": {
+                                "const": "image",
+                                "ui:component": "none"
+                            },
+                            "image": {
+                                "title": "Image",
+                                "allOf": [
+                                    {
+                                        "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                                    }
+                                ]
+                            },
+                            "alttext": {
+                                "type": "string",
+                                "title": "Image Alt text"
+                            }
+                        }
+                    },
+                    {
+                        "type": "object",
+                        "title": "Link",
+                        "properties": {
+                            "type": {
+                                "const": "link",
+                                "ui:component": "none"
+                            },
+                            "linkitem": {
+                                "type": "object",
+                                "title": "Link Details",
+                                "properties": {
+                                    "linklabel": {
+                                        "title": "Link Label",
+                                        "type": "string"
+                                    },
+                                    "linkaddress": {
+                                        "type": "string",
+                                        "title": "Link Address",
+                                        "ui:component": {
+                                            "params": {
+                                                "placeholder": "http://"
+                                            }
+                                        }
+                                    }
+                                },
+                                "propertyOrder": []
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

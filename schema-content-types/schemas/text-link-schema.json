@@ -1,0 +1,161 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://www.columbia-development.com/partial-content/text-link.json",
+
+	"title": "Text Link",
+
+	"allOf": [
+		{
+			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+		}
+	],
+	
+	"type": "object",
+	"properties": {
+		"textLink": {
+			"title": "Text Links",
+			"type": "object",
+			"properties": {
+				"font": {
+					"title": "Font Family",
+					"description": "Helvetica by default",
+					"type": "string",
+					"default": "Helvetica, Arial, sans-serif",
+					"oneOf": [
+						{
+							"title": "Helvetica, Arial, sans-serif",
+							"const": "helvetica"
+						},
+						{
+							"title": "GerTT",
+							"const": "gertt"
+						}
+					]
+				},
+				"color": {
+					"title": "Color",
+					"type": "object",
+					"ui:component": {
+						"name": "grid",
+						"params": {
+							"numColumns": 2,
+							"columns": [
+								{
+									"span": 1,
+									"pointers": [
+										"/colorSM"
+									]
+								},
+								{
+									"span": 1,
+									"pointers": [
+										"/colorMD"
+									]
+								},
+								{
+									"span": 1,
+									"pointers": [
+										"/colorLG"
+									]
+								},
+								{
+									"span": 1,
+									"pointers": [
+										"/colorXL"
+									]
+								}
+							]
+						}
+					},
+					"properties": {
+						"colorSM": {
+							"type": "string",
+							"ui:extension": {
+								"name": "brand-colours",
+								"params": {
+									"title": "Color SM",
+									"account": "dummy",
+									"contentID": "e2071a78-e9bd-48f9-a03b-6d9783f84197",
+									"useNames": true,
+									"groups": ["Button Colors"]
+								}
+							}
+						},
+						"colorMD": {
+							"type": "string",
+							"ui:extension": {
+								"name": "brand-colours",
+								"params": {
+									"title": "Color MD",
+									"account": "dummy",
+									"contentID": "e2071a78-e9bd-48f9-a03b-6d9783f84197",
+									"useNames": true,
+									"groups": ["Button Colors"]
+								}
+							}
+						},
+						"colorLG": {
+							"type": "string",
+							"ui:extension": {
+								"name": "brand-colours",
+								"params": {
+									"title": "Color LG",
+									"account": "dummy",
+									"contentID": "e2071a78-e9bd-48f9-a03b-6d9783f84197",
+									"useNames": true,
+									"groups": ["Button Colors"]
+								}
+							}
+						},
+						"colorXL": {
+							"type": "string",
+							"ui:extension": {
+								"name": "brand-colours",
+								"params": {
+									"title": "Color XL",
+									"account": "dummy",
+									"contentID": "e2071a78-e9bd-48f9-a03b-6d9783f84197",
+									"useNames": true,
+									"groups": ["Button Colors"]
+								}
+							}
+						}
+					}
+				},
+				
+				"links": {
+					"title": "Text Links",
+					"description": "up to 8 links",
+					"type": "array",
+					"minItems": 0,
+					"maxItems": 8,
+					"items": {
+						"type": "object",
+						"allOf": [
+							{
+								"$ref": "https://www.columbia-development.com/partial-content/link-button.json#/properties/link"
+							},
+							{
+								"title": "Text Link",
+								"properties": {
+									"linkText": {
+										"title": "Link Text",
+										"type": "string",
+										"minLength": 0,
+										"maxLength": 50
+									}
+									
+								},
+								"propertyOrder": ["linkText"],
+								"required": ["linkText"]
+							}
+						]
+					}
+				}
+				
+			}
+		}
+		
+	},
+	"propertyOrder": []
+}

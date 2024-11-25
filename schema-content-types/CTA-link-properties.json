@@ -1,0 +1,5 @@
+{
+  "body": "./schemas/CTA-link-properties-schema.json",
+  "schemaId": "https://www.columbia-development.com/helpers/CTA-link-properties.json",
+  "validationLevel": "PARTIAL"
+}

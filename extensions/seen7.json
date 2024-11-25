@@ -1,0 +1,23 @@
+{
+  "hubId": "66fc0482d6d84a5aa2861d09",
+  "name": "seen7",
+  "label": "Seen7",
+  "description": "",
+  "url": "http://localhost:3000/",
+  "height": 200,
+  "enabledForAllContentTypes": false,
+  "category": "CONTENT_FIELD",
+  "parameters": "{}",
+  "snippets": [
+    {
+      "label": "seen7",
+      "body": "{\r\n  \"title\": \"title\",\r\n  \"description\": \"description\",\r\n  \"type\": \"string\",\r\n  \"format\": \"uri\",\r\n  \"maxLength\": 256,\r\n  \"ui:extension\": {\r\n    \"name\": \"seen7\"\r\n  }\r\n}"
+    }
+  ],
+  "settings": "{\"API\":{\"READ\":true,\"EDIT\":true},\"SANDBOX\":{\"SAME_ORIGIN\":true,\"MODALS\":true,\"NAVIGATION\":true,\"POPUPS\":true,\"POPUP_ESCAPE_SANDBOX\":true,\"DOWNLOADS\":true,\"FORMS\":true}}",
+  "status": "ACTIVE",
+  "createdBy": "b56e5154-3565-4862-ac29-259d59429377",
+  "createdDate": "2024-11-18T13:35:55.851Z",
+  "lastModifiedBy": "b56e5154-3565-4862-ac29-259d59429377",
+  "lastModifiedDate": "2024-11-18T13:37:51.824Z"
+}

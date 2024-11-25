@@ -1,0 +1,179 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://www.columbia-development.com/vertical-spacer.json",
+
+	"title": "Vertical Spacer",
+	"description": "Description",
+
+	"allOf": [
+		{
+			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+		}
+	],
+	
+	"type": "object",
+	"properties": {
+		"spacerID": {
+			"title": "ID",
+			"description": "Unique ID for Vertical Spacer",
+			"type": "string",
+			"$comment": "TODO: @morozko add correct ID extension",
+			"default": "vspacer-1828"
+		},
+		"spacerSize": {
+			"title": "Height per Breakpoint",
+			"description": "Sets the height of the vertical spacer for each breakpoint",
+			"type": "object",
+			"allOf": [
+				{
+					"properties": {
+						"value": {
+							"ui:component": {
+								"name": "grid",
+								"params": {
+									"numColumns": 4,
+									"columns": [
+										{
+											"span": 1,
+											"pointers": [
+												"/spacerSize-sm"
+											]
+										},
+										{
+											"span": 1,
+											"pointers": [
+												"/spacerSize-md"
+											]
+										},
+										{
+											"span": 1,
+											"pointers": [
+												"/spacerSize-lg"
+											]
+										},
+										{
+											"span": 1,
+											"pointers": [
+												"/spacerSize-xl"
+											]
+										}
+									]
+								}
+							},
+							"properties": {
+								"spacerSize-sm": {
+									"title": "SM",
+									"type":"number",
+									"oneOf": [
+										{
+											"title": "1 rem (16px)",
+											"const": 3
+										},
+										{
+											"title": "1.5 rem (24px)",
+											"const": 4
+										},
+										{
+											"title": "2 rem (32px)",
+											"const": 5
+										},
+										{
+											"title": "4 rem (64px)",
+											"const": 6
+										}
+									],
+									"default": 3
+									
+								},
+								"spacerSize-md": {
+									"title": "MD",
+									"type":"number",
+									"oneOf": [
+										{
+											"title": "1 rem (16px)",
+											"const": 3
+										},
+										{
+											"title": "1.5 rem (24px)",
+											"const": 4
+										},
+										{
+											"title": "2 rem (32px)",
+											"const": 5
+										},
+										{
+											"title": "4 rem (64px)",
+											"const": 6
+										}
+									],
+									"default": 3
+								},
+								"spacerSize-lg": {
+									"title": "LG",
+									"type":"number",
+									"oneOf": [
+										{
+											"title": "1 rem (16px)",
+											"const": 3
+										},
+										{
+											"title": "1.5 rem (24px)",
+											"const": 4
+										},
+										{
+											"title": "2 rem (32px)",
+											"const": 5
+										},
+										{
+											"title": "4 rem (64px)",
+											"const": 6
+										}
+									],
+									"default": 3
+								},
+								"spacerSize-xl": {
+									"title": "XL",
+									"type":"number",
+									"oneOf": [
+										{
+											"title": "1 rem (16px)",
+											"const": 3
+										},
+										{
+											"title": "1.5 rem (24px)",
+											"const": 4
+										},
+										{
+											"title": "2 rem (32px)",
+											"const": 5
+										},
+										{
+											"title": "4 rem (64px)",
+											"const": 6
+										}
+									],
+									"default": 3
+								}
+							}
+						}
+					}
+					
+				}
+			]
+		},
+		"spacerColor": {
+			"type": "string",
+			"ui:extension": {
+				"name": "brand-colours",
+				"params": {
+					"title": "Background color",
+					"account": "dummy",
+					"contentID": "e2071a78-e9bd-48f9-a03b-6d9783f84197",
+					"useNames": true,
+					"groups": ["Text Colors"]
+				}
+			}
+		}
+	},
+	"propertyOrder": []
+}

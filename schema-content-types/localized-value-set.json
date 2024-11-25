@@ -1,0 +1,5 @@
+{
+  "body": "./schemas/localized-value-set-schema.json",
+  "schemaId": "https://schema-examples.com/localized-value-set",
+  "validationLevel": "CONTENT_TYPE"
+}

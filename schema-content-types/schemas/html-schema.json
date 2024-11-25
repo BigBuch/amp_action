@@ -1,0 +1,49 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://www.columbia-development.com/partial-content/html.json",
+
+	"title": "HTML slot",
+	"description": "Use to add custom HTML on a page",
+
+	"allOf": [
+		{
+			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+		}
+	],
+	
+	"type": "object",
+	"properties": {
+		"htmlSlot": {
+            "title": "HTML Slot",
+            "description": "Use to add custom HTML on a page",
+            "allOf": [
+                {
+                    "$ref": "https://www.columbia-development.com/helpers/localization-field.json#/definitions/h-localized-string"
+                },
+				{
+					"properties": {
+						"values": {
+							"items": {
+								"properties": {
+									"value": {
+										"title": "HTML",
+										"description": "add HTML, CSS or Java Script code",
+										"type": "string",
+										"format": "markdown",
+										"ui:component":{
+											"params":{
+											"defaultView":"markdown",
+											"withToolbar": false
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			]
+        }
+	},
+	"propertyOrder": []
+}

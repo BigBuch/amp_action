@@ -1,0 +1,221 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://schema-examples-accelerators.com/hero-banner.json",
+    "title": "Banner",
+    "description": "A banner consisting of an image, header, subheader, description and call to action link.",
+    "$comment": "Docs: https://amplience.com/docs/development/schema-examples/accelerators/readme.html#banner",
+    "allOf": [
+        {
+            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+        }
+    ],
+    "type": "object",
+    "properties": {
+        "bannerImage": {
+			"type":"array",
+			"maxItems": 1,
+			"items":{
+				"allOf":[
+				{
+					"$ref": "https://schema-examples-accelerators.com/demo-image.json"
+				},
+				{
+					"title": "Banner Background Image"
+				}
+				]
+			}
+		},
+        "bannerLogo": {
+            "description": "",
+            "type": "object",
+            "allOf": [
+                {
+                    "$ref": "https://schema-examples-accelerators.com/image.json"
+                },
+                {
+                    "title": "Banner Logo Icon"
+                }
+            ],
+            "title": "Banner logo"
+        },
+        "bannerTitle": {
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 255,
+            "title": "Banner Title",
+            "default": "BannerID-{test}"
+        },
+        "bannerText": {
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 2000,
+            "title": "Banner Text"
+        },
+        "button": {
+            "type": "object",
+            "allOf": [
+                {
+                    "$ref": "https://schema-examples-accelerators.com/accelerator-partials.json#/definitions/link"
+                },
+                {
+						"title": "Banner CTA",
+                        "properties":{
+							"hashString": {
+								"title": "Hash string",
+								"type":"string",
+								"maxLength": 250
+							}
+						}
+					}
+            ]
+        },
+        "horizontalAlignment": {
+			"title": "Content block horizontal position",
+			"description": "Left alignment by default",
+			"type": "string",
+			"enum": [
+                "left",
+				"center",
+				"right"
+			]
+		},
+        "verticalAlignment": {
+			"title": "Content block vertical position",
+			"description": "Top alignment by default",
+			"type": "string",
+			"enum": [
+				"top",
+                "middle",
+				"bottom"
+			]
+		},
+        "textColor": {
+            "type": "string",
+            "ui:extension": {
+                "name": "brand-colours",
+                "params": {
+                    "title": "Banner Text color",
+                    "account": "dummy",
+                    "contentID": "e2071a78-e9bd-48f9-a03b-6d9783f84197",
+                    "useNames": true,
+                    "groups": ["Text Colors"]
+                }
+            }
+        },
+        "ctaColor": {
+            "type": "string",
+            "ui:extension": {
+                "name": "brand-colours",
+                "params": {
+                    "title": "Banner CTA color",
+                    "account": "dummy",
+                    "contentID": "e2071a78-e9bd-48f9-a03b-6d9783f84197",
+                    "useNames": true,
+                    "groups": ["Button Colors"]
+
+                }
+            }
+        },
+        
+        "ctaColorMobile": {
+            "type": "string",
+            "ui:extension": {
+                "name": "brand-colours",
+                "params": {
+                    "title": "Mobile CTA color",
+                    "account": "dummy",
+                    "contentID": "e2071a78-e9bd-48f9-a03b-6d9783f84197",
+                    "useNames": true,
+                    "groups": ["Button Colors"]
+
+                }
+            }
+        },
+        "imgSS": {
+            "title": "title",
+            "description": "description",
+            "type": "string",
+            "format": "uri",
+            "maxLength": 256,
+            "ui:extension": {
+                "name": "seen7"
+            },
+            "localized": true
+        },
+
+
+
+        "imageLinkGrid": {
+      "type": "object",
+      "properties": {
+        "imageLink": {
+          "title": "Image Link",
+          "allOf": [
+            {
+              "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+            }
+          ]
+        },
+        "imageAltText": {
+          "type": "string",
+          "title": "Image alt text",
+          "ui:component": {
+            "name": "text-area",
+            "params": {
+              "placeholder": "Description of image for alt tag"
+            }
+          }
+        },
+        "isSVG": {
+          "type": "boolean",
+          "title": "Image SVG",
+          "description": "Check if image is an SVG"
+        },
+        "imageTarget": {
+          "title": "Image Link Target",
+          
+            "type": "boolean"
+        }
+      },
+      "ui:component": {
+        "name": "grid",
+        "params": {
+          "numColumns": 12,
+          "columns": [
+            {
+              "span": 8,
+              "pointers": ["/imageLink", "/imageAltText"]
+            },
+            {
+              "span": 4,
+              "pointers": ["/isSVG", "/imageTarget"]
+            }
+          ]
+        }
+      }
+    }
+  
+        
+        
+        
+      
+
+
+    },
+
+    "propertyOrder": [
+        "horizontalAlignment",
+        "verticalAlignment",
+
+        "bannerImage",
+        
+        "bannerLogo",
+        "bannerTitle",
+        "bannerText",
+        "textColor",
+        
+        
+        "button",
+        "ctaColor"
+    ]
+}

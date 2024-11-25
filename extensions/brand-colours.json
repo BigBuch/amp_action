@@ -1,0 +1,18 @@
+{
+  "hubId": "66fc0482d6d84a5aa2861d09",
+  "name": "brand-colours",
+  "label": "Brand Colours",
+  "description": "",
+  "url": "https://brand-colours.extensions.content.amplience.net",
+  "height": 200,
+  "enabledForAllContentTypes": false,
+  "category": "CONTENT_FIELD",
+  "parameters": "{}",
+  "snippets": [],
+  "settings": "{\"API\":{\"READ\":false,\"EDIT\":false},\"SANDBOX\":{\"SAME_ORIGIN\":true,\"MODALS\":false,\"NAVIGATION\":false,\"POPUPS\":false,\"POPUP_ESCAPE_SANDBOX\":false,\"DOWNLOADS\":false,\"FORMS\":false}}",
+  "status": "ACTIVE",
+  "createdBy": "b56e5154-3565-4862-ac29-259d59429377",
+  "createdDate": "2024-11-08T17:35:30.234Z",
+  "lastModifiedBy": "b56e5154-3565-4862-ac29-259d59429377",
+  "lastModifiedDate": "2024-11-08T17:44:04.361Z"
+}

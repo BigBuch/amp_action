@@ -1,0 +1,5 @@
+{
+  "body": "./schemas/CTA-button-2-schema.json",
+  "schemaId": "https://www.columbia-development.com/partial-content/CTA-button-2.json",
+  "validationLevel": "PARTIAL"
+}

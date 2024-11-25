@@ -1,0 +1,5 @@
+{
+  "body": "./schemas/brend-colors-schema.json",
+  "schemaId": "https://www.columbia-development.com/partial-content/brend-colors.json",
+  "validationLevel": "PARTIAL"
+}

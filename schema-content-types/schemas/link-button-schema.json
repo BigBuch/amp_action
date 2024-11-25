@@ -1,0 +1,158 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://www.columbia-development.com/partial-content/link-button.json",
+
+	"title": "Link Overlay",
+	"allOf": [
+		{
+			"$ref": "http://bigcontent.io/cms/schema/v2/core#/definitions/content"
+		}
+	],
+
+	"type": "object",
+	
+	"properties": {
+
+		"link": {
+			"title": "Link properties",
+			"type": "object",
+			"properties": {
+				"_event-1": {
+					"type": "object",
+					"properties": {
+						"buttonType": {
+							"title": "Link type",
+							"type": "string",
+							
+							"oneOf": [
+								{
+									
+									
+									"title": "Static URL",
+									"const": "URL"
+
+								},
+								{
+									"title": "Category",
+									"const": "category"
+								},
+								{
+									"title": "Content Asset",
+									"const": "content-asset"
+								},
+								{
+									"title": "Product",
+									"const": "product"
+								},
+								{
+									"title": "Pipeline",
+									"const": "pipeline"
+								},
+								{
+									"title": "Search",
+									"const": "search"
+								},
+								{
+									"title": "Blog Story",
+									"const": "blog"
+								}
+							]
+						}
+					},
+					"if": {
+						"properties": {
+							"buttonType": {
+								"oneOf": [
+									{
+										"const": "URL"
+									},
+									{
+										"const": "content-asset"
+									},
+									{
+										"const": "product"
+									},
+									{
+										"const": "pipeline"
+									},
+									{
+										"const": "search"
+									},
+									{
+										"const": "blog"
+									}
+								]
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"buttonQuery": {
+								"title": "Query",
+								"description": "Product, Content Asset ID, Search String, Pipeline Name, or a static URL, depending on the Link type",
+								"type": "string",
+								"examples": ["https://..."],
+								"ui:component":{
+									"params":{
+									"placeholder":"https://..."
+									}
+								}
+							}
+						}
+					},
+					"else": {
+						"properties": {
+							"buttonQuery": {
+								"title": "Query",
+								"description": "Choose Category from the list",
+								"type": "string",
+								"enum": [
+									"Men",
+									"Women",
+									"Kids",
+									"Shoes",
+									"Accessories"
+								],
+								"examples": ["men", "women", "shoes"]
+							}
+						}
+					},
+					"ui:component": {
+						"params": {
+							"withHeader": false
+						}
+					},
+					"required": [ "buttonQuery" ]	
+				},
+				"buttonSEO": {
+					"title": "Hush String",
+					"description": "Part of the url that follows the # or ?, commonly used for filters",
+					"type": "string",
+					"ui:component":{
+						"params":{
+							"placeholder":"?prefv1=..."
+						}
+					}
+				},
+				"buttonTarget": {
+					"title": "Open in a New Tab",
+					"type": "boolean",
+					"ui:component":{
+						"name":"switch",
+						"params":{
+							"labelPosition":"left"
+						}
+					}
+				},
+				"_localized-title": {
+					"const": "text",
+					"title": "Localized component",
+					"ui:component": "none"
+				}
+			},
+			"required": [],
+			"propertyOrder": []
+			
+		}
+	}
+}

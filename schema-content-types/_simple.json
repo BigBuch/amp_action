@@ -1,0 +1,5 @@
+{
+  "body": "./schemas/_simple-schema.json",
+  "schemaId": "https://nadiia.morozko.com/_simple.json",
+  "validationLevel": "PARTIAL"
+}

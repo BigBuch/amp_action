@@ -1,0 +1,5 @@
+{
+  "body": "./schemas/localization-field-schema.json",
+  "schemaId": "https://www.columbia-development.com/helpers/localization-field.json",
+  "validationLevel": "PARTIAL"
+}

@@ -1,0 +1,5 @@
+{
+  "body": "./schemas/next-gen-content-palettes-schema.json",
+  "schemaId": "https://schema-examples.com/next-gen-content-palettes",
+  "validationLevel": "CONTENT_TYPE"
+}

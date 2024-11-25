@@ -1,0 +1,5 @@
+{
+  "body": "./schemas/html-schema.json",
+  "schemaId": "https://www.columbia-development.com/partial-content/html.json",
+  "validationLevel": "CONTENT_TYPE"
+}

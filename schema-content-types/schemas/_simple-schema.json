@@ -1,0 +1,249 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://nadiia.morozko.com/_simple.json",
+
+	"allOf": [
+		{
+			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+		}
+	],
+	
+	"type": "object",
+	"properties": {
+
+		"divider": {
+			"type": "string",
+			"ui:component": {
+				"name": "divider",
+				"params": {
+					"label": "Divider example",
+					"$comment": "Size params - xs, sm, md, lg, xl, xxl. Label Position - left, right, center. Variant - dotted, dashed, solid (d)",
+					"size": "sm",
+					"labelPosition": "left",
+					"variant": "dashed"
+				}
+			}
+		},
+
+		"string-Array":{
+			"title":"String array",
+			"description":"An array of strings with default values",
+			"type":"array",
+			"items":{
+				"type":"string"
+			},
+			"default":[
+				"string",
+				"string1",
+				"string2"
+			]
+      	},
+
+		"imageTarget": {
+			"title": "Image Link Target",
+			"type": "string",
+			"oneOf": [
+				{
+					"title": "New Tab",
+					"const": "_blank"
+				},
+				{
+					"title": "Same Tab",
+					"const": "_self"
+				}
+			]
+		},
+
+		"listOfEnums": {
+			"$comment": "A list of up to 3 values chosen from an enum. Each value must be unique",
+			"title": "Values",
+			"description": "Choose up to 3 values",
+			"type": "array",
+			"minItems": 0,
+			"maxItems": 3,
+			"uniqueItems": true,
+			"items": {
+				"type": "string",
+				"enum": [
+					"Value one",
+					"Value two",
+					"Value three",
+					"Value four",
+					"Value five"
+				]
+			}
+		},
+
+		"RichText": {
+			"type": "object",
+			"title": "Rich Text",
+			"description": "Rich text for headings or paragraphs",
+			"properties": {
+				"type": {
+					"const": "paragraph",
+					"ui:component": "none"
+				},
+				"body": {
+					"type": "string",
+					"format": "markdown",
+					"title": "For headings or paragraphs"
+				}
+			}
+		},
+
+		"date": {
+			"title": "date",
+			"description": "description",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 50,
+			"format": "date",
+			"examples": [
+				"2019-10-15",
+				"2018-07-31"
+			],
+			"$comment": "A string property with the date format"
+		},
+
+		"labelledListWithDecimals": {
+			"title": "Decimal dropdown with labels",
+			"description": "A dropdown with user friendly labels",
+			"type": "number",
+			"oneOf": [
+				{
+					"title": "Low",
+					"const": 0.45
+				},
+				{
+					"title": "Medium",
+					"const": 0.75
+				},
+				{
+					"title": "High",
+					"const": 0.85
+				}
+			]
+		},
+
+		"percentValue": {
+			"type": "integer",
+			"title": "Percentage",
+			"description": "Shows use of the suffix parameter",
+			"examples": ["20%", "40%", "65%"],
+			"minimum": 0,
+			"maximum": 100,
+			"ui:component": {
+				"params": {
+					"placeholder": "from 50%",
+					"$comment": "variant: filled - to disable input",
+					"suffix": "%",
+					"prefix": "from ",
+					"allowNegative": false
+				}
+			}
+		},
+
+		"multiLineText":{
+			"type":"string",
+			"title":"Multi-line",
+			"description":"Text area component",
+			"ui:component":{
+				"name":"text-area",
+				"params":{
+				"minRows":2,
+				"maxRows":5,
+				"placeholder":"Maximum of 5 lines will show before scroll",
+				"autosize":"true"
+				}
+			}
+		},
+
+		"yesOrNoCheck":{
+			"title":"Yes or no",
+			"type":"boolean",
+			"ui:component":{
+				"name":"switch",
+				"params":{
+				"labelPosition":"left"
+				}
+			}
+		},
+
+		"arrayWithObject":{
+			"type":"array",
+			"items":{
+				"type":"object",
+				"properties":{
+				"string":{
+					"type":"string"
+				},
+				"boolean":{
+					"type":"boolean"
+				}
+				}
+			},
+			"ui:component":{
+				"params":{
+				"withChildHeaders":false
+				}
+			}
+		},
+
+		"flexible-list": {
+			"type": "array",
+			"title": "Flexible list",
+			"ui:component": {
+				"params": {
+				"icons": {
+					"text": "typography",
+					"banner": "carousel-horizontal"
+				}
+				}
+			},
+			"items": {
+				"oneOf": [
+				{
+					"type": "object",
+					"title": "Text",
+					"properties": {
+					"type": {
+						"const": "text",
+						"ui:component": "none"
+					},
+					"text": {
+						"type": "string",
+						"title": "Text",
+						"maxLength": 200
+					}
+					}
+				},
+				{
+					"type": "object",
+					"title": "Banner",
+					"properties": {
+					"type": {
+						"const": "banner",
+						"ui:component": "none"
+					},
+					"title": {
+						"type": "string",
+						"title": "Title"
+					},
+					"image": {
+						"title": "Image",
+						"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+					},
+					"titleColor": {
+						"type": "string",
+						"format": "color",
+						"title": "Title Color"
+					}
+					}
+				}
+				]
+			}
+		}
+
+	}
+}
+

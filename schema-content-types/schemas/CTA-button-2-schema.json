@@ -1,0 +1,131 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://www.columbia-development.com/partial-content/CTA-button-2.json",
+
+	"title": "CTA Button",
+	"description": "Description",
+
+	"allOf": [
+		{
+			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+		}
+	],
+	
+	"type": "object",
+	"properties": {
+		"ctaButton": {
+			"title": "CTA button -- v.2",
+			"type": "object",
+			"properties": {
+				"ctaButtonID": {
+					"title": "ID",
+					"description": "Unique ID for CTA component",
+					"type": "string",
+					"$comment": "TODO: @morozko add correct ID extension",
+					"default": "cta-1828"
+				},
+				"buttonText": {
+					"title": "CTA text",
+					"type": "string",
+					"minLength": 0,
+					"maxLength": 50,
+					"allOf": [
+						{
+							"$ref": "https://www.columbia-development.com/helpers/localization-field.json#/definitions/h-localized-string"
+						}
+					],
+					"ui:component":{
+						"params":{
+							"collapsed": true
+						}
+					}
+				},
+				"buttonEvent": {
+					"title": "CTA link type and Query",
+					"type": "object",
+					"allOf": [
+						{
+							"$ref": "https://www.columbia-development.com/helpers/localization-field.json#/definitions/h-localized-value"
+						},
+						{
+							"properties": {
+								"values": {
+									"items": {
+										"properties": {
+											"value": {
+												"type": "object",
+												"allOf": [
+													{
+														"$ref": "https://www.columbia-development.com/helpers/CTA-link-properties.json#/definitions/button/properties/buttonEvent"
+													},
+													{
+														"ui:component": {
+															"params": {
+																"withHeader": true
+															}
+														}
+													}
+												]
+											}
+										}
+									}
+								}
+							}
+						}
+					],
+					"ui:component":{
+						"params":{
+							"collapsed": true
+						}
+					}
+				},
+				
+				"buttonSEO": {
+					"title": "Hush String",
+					"description": "Part of the url that follows the # or ?, commonly used for filters",
+					"type": "string",
+					"allOf": [
+						{
+							"$ref": "https://www.columbia-development.com/helpers/localization-field.json#/definitions/h-localized-string"
+						}
+					],
+					"ui:component":{
+						"params":{
+							"collapsed": true
+						}
+					}
+				},
+				"buttonTarget": {
+					"title": "CTA Target",
+					"type": "object",
+					"allOf": [
+						{
+							"$ref": "https://www.columbia-development.com/helpers/localization-field.json#/definitions/h-localized-value"
+						},
+						{
+							"properties": {
+								"values": {
+									"items": {
+										"properties": {
+											"value": {
+												"title": "Open in a New Tab",
+												"type": "boolean"
+												
+											}
+										}
+									}
+								}
+							}
+						}
+					],
+					"ui:component":{
+						"params":{
+							"collapsed": true
+						}
+					}
+				}
+			},
+			"propertyOrder": []
+		}
+	}
+}

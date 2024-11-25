@@ -1,0 +1,208 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://www.columbia-development.com/wrapper-container.json",
+
+	"title": "Wrapper / Container",
+	"description": "",
+
+	"allOf": [
+		{
+			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+		}
+	],
+	
+	"type": "object",
+	"properties": {
+		"createContent": {
+            "type": "array",
+            "title": "Create a new content",
+			"ui:component": {
+				"params": {
+					"icons": {
+						"ctaBlock": "square-plus",
+                        "ctaBlockExist": "square-plus",
+						"image": "photo-plus",
+                        "spacer": "section",
+						"html": "code",
+						"link": "link"
+					}
+				}
+			},
+            "items": {
+                "oneOf": [
+                    {
+                        "type": "object",
+                        "title": "CTA Block",
+                        "properties": {
+                            "type": {
+                                "const": "ctaBlock",
+                                "ui:component": "none"
+                            },
+                            "ctaBlock": {
+                                "title": "CTA Block",
+                                "allOf": [
+                                    {
+                                        "$ref": "https://www.columbia-development.com/partial-content/CTA-button-2.json"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "type": "object",
+                        "title": "Predefined CTA Block",
+                        "properties": {
+                            "type": {
+                                "const": "ctaBlockExist",
+                                "ui:component": "none"
+                            },
+                            "ctaBlock": {
+                                "title": "Predefined CTA Block",
+                                "description": "add existing content",
+                                "allOf": [
+                                    { "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference" },
+                                    {
+                                        "properties": {
+                                            "contentType": {
+                                                "enum": [
+                                                    "https://www.columbia-development.com/partial-content/CTA-button-2.json"
+                                                ]
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                        
+                    },
+					{
+                        "type": "object",
+                        "title": "Predefined HTML Slot",
+                        "properties": {
+                            "type": {
+                                "const": "html",
+                                "ui:component": "none"
+                            },
+                            "html": {
+                                "title": "Predefined HTML Slot",
+                                "description": "Only for associated user",
+                                "allOf": [
+                                    { "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference" },
+                                    {
+                                        "properties": {
+                                            "contentType": {
+                                                "enum": [
+                                                    "https://www.columbia-development.com/partial-content/html.json"
+                                                ]
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                        
+                    },
+                    {
+                        "type": "object",
+                        "title": "Image",
+                        "properties": {
+                            "type": {
+                                "const": "image",
+                                "ui:component": "none"
+                            },
+                            "image": {
+                                "title": "Image",
+                                "allOf": [
+                                    {
+                                        "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                                    }
+                                ]
+                            },
+                            "alttext": {
+                                "type": "string",
+                                "title": "Image Alt text"
+                            }
+                        }
+                    },
+                    {
+                        "type": "object",
+                        "title": "Vertical Spacer",
+                        "properties": {
+                            "type": {
+                                "const": "spacer",
+                                "ui:component": "none"
+                            },
+                            "image": {
+                                "title": "Spacer",
+                                "allOf": [
+                                    {
+                                        "$ref": "https://www.columbia-development.com/vertical-spacer.json"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "type": "object",
+                        "title": "Link",
+                        "properties": {
+                            "type": {
+                                "const": "link",
+                                "ui:component": "none"
+                            },
+                            "linkitem": {
+                                "type": "object",
+                                "title": "Link Details",
+                                "properties": {
+                                    "linklabel": {
+                                        "title": "Link Label",
+                                        "type": "string"
+                                    },
+                                    "linkaddress": {
+                                        "type": "string",
+                                        "title": "Link Address",
+                                        "ui:component": {
+                                            "params": {
+                                                "placeholder": "http://"
+                                            }
+                                        }
+                                    }
+                                },
+                                "propertyOrder": []
+                            }
+                        }
+                    },
+                    {
+                        "type": "object",
+                        "title": "Predefined Vertical Spacer",
+                        "properties": {
+                            "type": {
+                                "const": "pred-vertical-spacer",
+                                "ui:component": "none"
+                            },
+                            "predVS": {
+                                "allOf": [
+                            { "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference" },
+                            {
+                                "properties": {
+                                    "contentType": {
+                                        "enum": [
+                                            "https://www.columbia-development.com/vertical-spacer.json"
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                            }
+                        }
+                        
+                    }
+                ]
+            }
+		}
+
+		
+	},
+
+	"propertyOrder": []
+}

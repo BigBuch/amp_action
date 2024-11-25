@@ -1,0 +1,19 @@
+{
+  "contentTypeUri": "https://schema-examples.com/sfcc-localized-slot",
+  "status": "ACTIVE",
+  "settings": {
+    "label": "Slot",
+    "icons": [],
+    "visualizations": [
+      {
+        "label": "Demo visualization",
+        "templatedUri": "https://{{vse.domain}}/v1/content/astounduk/content-item/{{content.sys.id}}?template=demo-visualization&locale={{locales}}",
+        "default": true
+      }
+    ],
+    "cards": []
+  },
+  "repositories": [
+    "slots"
+  ]
+}

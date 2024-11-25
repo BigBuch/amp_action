@@ -1,0 +1,18 @@
+{
+  "hubId": "66fc0482d6d84a5aa2861d09",
+  "name": "json-editor",
+  "label": "JSON Editor",
+  "description": "",
+  "url": "https://amp-product.s3.eu-west-1.amazonaws.com/doc-examples/json-viewer/index.html",
+  "height": 200,
+  "enabledForAllContentTypes": true,
+  "category": "CONTENT_EDITOR",
+  "parameters": "{}",
+  "snippets": [],
+  "settings": "{\"API\":{\"READ\":false,\"EDIT\":false},\"SANDBOX\":{\"SAME_ORIGIN\":false,\"MODALS\":false,\"NAVIGATION\":false,\"POPUPS\":false,\"POPUP_ESCAPE_SANDBOX\":false,\"DOWNLOADS\":false,\"FORMS\":false}}",
+  "status": "ACTIVE",
+  "createdBy": "b56e5154-3565-4862-ac29-259d59429377",
+  "createdDate": "2024-11-25T11:42:01.337Z",
+  "lastModifiedBy": "b56e5154-3565-4862-ac29-259d59429377",
+  "lastModifiedDate": "2024-11-25T11:42:01.337Z"
+}

@@ -1,0 +1,62 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://www.columbia-development.com/partial-content/CTA-button.json",
+
+	"title": "CTA Button",
+	"description": "Description",
+
+	"allOf": [
+		{
+			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+		}
+	],
+	
+	"type": "object",
+	"properties": {
+		"ctaButton": {
+			"title": "CTA button -- v.1",
+			"type": "object",
+			"properties": {
+				"ctaButtonID": {
+					"title": "ID",
+					"description": "Unique ID for CTA component",
+					"type": "string",
+					"$comment": "TODO: @morozko add correct ID extension",
+					"default": "cta-1828"
+				},
+				"ctaButtonOption": {
+					"title": "Localized content",
+					"allOf": [
+						{
+							"$ref": "https://www.columbia-development.com/helpers/localization-field.json#/definitions/h-localized-value"
+						},
+						{
+							"properties": {
+								"values": {
+									"items": {
+										"properties": {
+											"value": {
+												"type": "object",
+												"allOf": [
+													{
+														"$ref": "https://www.columbia-development.com/helpers/CTA-link-properties.json#/definitions/button"
+													}
+												],
+												"ui:component":{
+													"params":{
+													"collapsed": true
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					]
+				}
+			},
+			"propertyOrder": []
+		}
+	}
+}

@@ -1,0 +1,5 @@
+{
+  "body": "./schemas/vertical-spacer-schema.json",
+  "schemaId": "https://www.columbia-development.com/vertical-spacer.json",
+  "validationLevel": "CONTENT_TYPE"
+}

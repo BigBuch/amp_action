@@ -1,0 +1,19 @@
+{
+  "contentTypeUri": "https://www.columbia-development.com/wrapper-container.json",
+  "status": "ACTIVE",
+  "settings": {
+    "label": "Wrapper Container",
+    "icons": [],
+    "visualizations": [
+      {
+        "label": "Demo visualization",
+        "templatedUri": "https://{{vse.domain}}/v1/content/astounduk/content-item/{{content.sys.id}}?template=demo-visualization&locale={{locales}}",
+        "default": true
+      }
+    ],
+    "cards": []
+  },
+  "repositories": [
+    "content"
+  ]
+}

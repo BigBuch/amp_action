@@ -1,0 +1,5 @@
+{
+  "body": "./schemas/localized-banner-schema.json",
+  "schemaId": "https://schema-examples.com/localized-banner",
+  "validationLevel": "CONTENT_TYPE"
+}

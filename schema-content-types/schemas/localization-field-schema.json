@@ -1,0 +1,43 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://www.columbia-development.com/helpers/localization-field.json",
+
+	"definitions": {
+		"h-localized-string": {
+            "allOf": [
+                {
+                    "$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string"
+                }
+            ],
+            "ui:component": {
+                "name": "localized-value-set",
+                "params": {
+					"$comments": "TODO: @morozko add a proper list of locales",
+                    "pinnedLocales": [
+                        "en-US",
+                        "de-DE"
+                    ],
+                    "withHeader": true
+                }
+            }
+		},
+		"h-localized-value": {
+            "allOf": [
+                {
+                    "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+                }
+            ],
+            "ui:component": {
+                "name": "localized-value-set",
+                "params": {
+					"$comments": "TODO: @morozko add a proper list of locales",
+                    "pinnedLocales": [
+                        "en-US",
+                        "de-DE"
+                    ],
+                    "withHeader": true
+                }
+            }
+		}
+	}
+}

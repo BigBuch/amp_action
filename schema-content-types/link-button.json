@@ -1,0 +1,5 @@
+{
+  "body": "./schemas/link-button-schema.json",
+  "schemaId": "https://www.columbia-development.com/partial-content/link-button.json",
+  "validationLevel": "PARTIAL"
+}
